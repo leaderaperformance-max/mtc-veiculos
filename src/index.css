@@ -3,6 +3,9 @@
 @theme {
   --font-sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-brand: #017973;
+  --color-brand-dark: #015f5a;
+  --color-brand-light: #e6f5f4;
 }
 
 body {

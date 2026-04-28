@@ -52,14 +52,14 @@ export function Financiamento() {
                   type="number" 
                   value={vehiclePrice}
                   onChange={(e) => setVehiclePrice(Number(e.target.value))}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-brand text-lg font-medium"
                 />
               </div>
 
               <div>
                 <div className="flex justify-between mb-2">
                   <label className="block text-sm font-medium text-gray-700">Entrada ({downPaymentPercent}%)</label>
-                  <span className="text-sm font-medium text-blue-600">
+                  <span className="text-sm font-medium text-brand">
                     {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(result.downPayment)}
                   </span>
                 </div>
@@ -70,13 +70,13 @@ export function Financiamento() {
                   step="5"
                   value={downPaymentPercent}
                   onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-                  className="w-full accent-blue-600" 
+                  className="w-full accent-[#017973]" 
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Parcelas</label>
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                   {[12, 24, 36, 48, 60].map(n => (
                     <button
                       key={n}
@@ -95,7 +95,7 @@ export function Financiamento() {
           <div className="p-8 md:p-12 bg-gray-50 flex flex-col justify-center">
             <div className="text-center mb-8">
               <div className="text-sm text-gray-500 font-medium mb-2">Valor da Parcela</div>
-              <div className="text-5xl font-bold text-blue-600">
+              <div className="text-5xl font-bold text-brand">
                 {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(result.monthlyPayment)}
               </div>
               <div className="text-sm text-gray-500 mt-2">em {installments}x com taxa de {storeConfig.financing_rate}% a.m.</div>
