@@ -52,7 +52,6 @@ export function Layout() {
   const navLinks = [
     { name: "Estoque", path: "/estoque" },
     { name: "Financiamento", path: "/financiamento" },
-    { name: "Sobre", path: "/sobre" },
     { name: "Contato", path: "/contato" },
   ];
 
@@ -179,7 +178,6 @@ export function Layout() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link to="/estoque" className="hover:text-white transition-colors">Estoque</Link></li>
                 <li><Link to="/financiamento" className="hover:text-white transition-colors">Financiamento</Link></li>
-                <li><Link to="/sobre" className="hover:text-white transition-colors">Sobre Nós</Link></li>
               </ul>
             </div>
             <div>

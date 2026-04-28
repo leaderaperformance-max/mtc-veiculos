@@ -14,7 +14,7 @@ export function Favoritos() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    document.title = 'Favoritos | Minha Loja de Veículos';
+    document.title = 'Favoritos | MTC Veículos';
   }, []);
 
   useEffect(() => {

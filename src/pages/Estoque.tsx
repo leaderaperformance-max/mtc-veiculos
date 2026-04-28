@@ -98,7 +98,7 @@ export function Estoque() {
 
   // SEO - título dinâmico
   useEffect(() => {
-    document.title = 'Estoque | Minha Loja de Veículos';
+    document.title = 'Estoque | MTC Veículos';
   }, []);
 
   // Extrair marcas únicas para o select

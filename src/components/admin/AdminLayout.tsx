@@ -32,7 +32,7 @@ export function AdminLayout() {
         }`}
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-neutral-200 dark:border-neutral-800">
-          <span className="text-xl font-bold text-neutral-900 dark:text-white">Admin Portal</span>
+          <span className="text-xl font-bold text-neutral-900 dark:text-white">MTC Veículos</span>
           <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-white">
             <X className="w-5 h-5" />
           </button>

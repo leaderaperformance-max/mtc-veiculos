@@ -19,7 +19,7 @@ export function Comparar() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    document.title = 'Comparar Veículos | Minha Loja de Veículos';
+    document.title = 'Comparar Veículos | MTC Veículos';
   }, []);
 
   useEffect(() => {

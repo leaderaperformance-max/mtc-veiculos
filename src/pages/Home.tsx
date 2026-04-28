@@ -12,7 +12,7 @@ export function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = 'Início | Minha Loja de Veículos';
+    document.title = 'Início | MTC Veículos';
   }, []);
 
   useEffect(() => {

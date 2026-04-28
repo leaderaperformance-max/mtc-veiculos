@@ -9,7 +9,6 @@ import { Home } from "./pages/Home";
 import { Estoque } from "./pages/Estoque";
 import { Carro } from "./pages/Carro";
 import { Financiamento } from "./pages/Financiamento";
-import { Sobre } from "./pages/Sobre";
 import { Contato } from "./pages/Contato";
 import { Comparar } from "./pages/Comparar";
 import { Favoritos } from "./pages/Favoritos";
@@ -40,7 +39,6 @@ export default function App() {
               <Route path="estoque" element={<Estoque />} />
               <Route path="carro/:slug" element={<Carro />} />
               <Route path="financiamento" element={<Financiamento />} />
-              <Route path="sobre" element={<Sobre />} />
               <Route path="contato" element={<Contato />} />
               <Route path="comparar" element={<Comparar />} />
               <Route path="favoritos" element={<Favoritos />} />

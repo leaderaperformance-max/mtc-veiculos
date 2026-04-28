@@ -7,7 +7,7 @@ export function Contato() {
   const [settings, setSettings] = useState<any>(null);
 
   useEffect(() => {
-    document.title = 'Contato | Minha Loja de Veículos';
+    document.title = 'Contato | MTC Veículos';
     supabase.from('store_settings').select('*').limit(1).single()
       .then(({ data }) => { if (data) setSettings(data); });
   }, []);
