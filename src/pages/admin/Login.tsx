@@ -15,7 +15,7 @@ export function Login() {
   const location = useLocation();
   const { user } = useAuth();
 
-  const from = location.state?.from?.pathname || '/admin/dashboard';
+  const from = location.state?.from?.pathname || '/admin';
 
   // Se já estiver logado, redireciona para o admin
   if (user) {
