@@ -248,7 +248,7 @@ export function Carro() {
               <div className="font-medium text-gray-900">{vehicle.year}</div>
             </div>
             <div>
-              <div className="text-sm text-gray-500 mb-1">Quilometragem</div>
+              <div className="text-sm text-gray-500 mb-1">Kms rodados</div>
               <div className="font-medium text-gray-900">{vehicle.mileage != null ? vehicle.mileage.toLocaleString('pt-BR') + ' km' : '-'}</div>
             </div>
             <div>
