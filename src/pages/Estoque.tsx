@@ -24,6 +24,7 @@ export function Estoque() {
   const [brandFilter, setBrandFilter] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<number>(300000);
   const [minYear, setMinYear] = useState<string>("");
+  const [fuelFilter, setFuelFilter] = useState<string>("");
 
   useEffect(() => {
     async function fetchVehicles() {
@@ -38,6 +39,7 @@ export function Estoque() {
             price,
             mileage,
             transmission,
+            fuel_type,
             created_at,
             vehicle_images (
               url, is_primary
@@ -93,8 +95,13 @@ export function Estoque() {
       result = result.filter(v => parseInt(v.year) >= parseInt(minYear) || v.year?.includes(minYear));
     }
 
+    // Filtro de Combustível
+    if (fuelFilter) {
+      result = result.filter(v => v.fuel_type?.toLowerCase() === fuelFilter.toLowerCase());
+    }
+
     setFilteredVehicles(result);
-  }, [vehicles, textSearch, brandFilter, maxPrice, minYear]);
+  }, [vehicles, textSearch, brandFilter, maxPrice, minYear, fuelFilter]);
 
   // SEO - título dinâmico
   useEffect(() => {
@@ -106,6 +113,9 @@ export function Estoque() {
   
   // Extrair anos únicos para o select
   const uniqueYears = Array.from(new Set(vehicles.map(v => v.year))).sort((a: string, b: string) => b.localeCompare(a));
+
+  // Extrair combustíveis únicos para o select
+  const uniqueFuels = Array.from(new Set(vehicles.map(v => v.fuel_type).filter(Boolean))).sort();
 
   return (
     <motion.div
@@ -197,12 +207,27 @@ export function Estoque() {
                 </select>
               </div>
               
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Combustível</label>
+                <select
+                  value={fuelFilter}
+                  onChange={(e) => setFuelFilter(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-brand transition-shadow"
+                >
+                  <option value="">Todos</option>
+                  {uniqueFuels.map(fuel => (
+                    <option key={fuel} value={fuel}>{fuel}</option>
+                  ))}
+                </select>
+              </div>
+
               <button
                 onClick={() => {
                   setTextSearch("");
                   setBrandFilter("");
                   setMaxPrice(300000);
                   setMinYear("");
+                  setFuelFilter("");
                 }}
                 className="w-full bg-black text-white rounded-xl py-3 font-medium hover:bg-gray-800 transition-colors shadow-sm"
               >
